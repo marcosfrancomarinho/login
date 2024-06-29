@@ -11,7 +11,6 @@ router.post('/', async (req, res) => {
         await hasUserDB(email, password)
         res.status(200).type('json').send({ OK: true, msg: 'usuário logado com sucesso' })
     } catch (error) {
-        console.log(error)
         res.status(400).type('json').send({ error: error.message })
     }
 })
